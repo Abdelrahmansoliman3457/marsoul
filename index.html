@@ -52,7 +52,7 @@
                 >تسجيل دخول مختبر</a
               >
             </div>
-            <div class="d-flex">
+            <div class="d-flex align-items-center">
               <img class="ml-2" src="imgs/saudi.png" alt="lang" />
               <div class="drop-header">
                 عربي
@@ -424,6 +424,8 @@
         nav: true,
         dots: false,
         rtl: true,
+        autoplay: true,
+        autoplayTimeout: 3000,
         lazyLoad: true,
 
         center: true,
@@ -461,6 +463,14 @@
       let bars = document.querySelector(".bars");
       let navLayer = document.querySelector(".nav-layer");
       let sideNav = document.querySelector(".flex-logins");
+      let linksMain = document.querySelectorAll('.user-ul li');
+      for(let i = 0 ; i < linksMain.length ; i++){
+        linksMain[i].addEventListener('click' , function(){
+          bars.classList.toggle("bar-tog");
+          navLayer.classList.toggle("slideto");
+          sideNav.classList.toggle("slideto");
+        })
+      }
 
       bars.addEventListener("click", function () {
         this.classList.toggle("bar-tog");
